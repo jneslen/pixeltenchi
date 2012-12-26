@@ -22,6 +22,6 @@
 [submodule "modules/cache"]
 	path = modules/cache
 	url = git://github.com/jneslen/kohana-cache.git
-[submodule "modules/less"]
-	path = modules/less
+[submodule "modules/assets/lessphp"]
+	path = modules/assets/lessphp
 	url = git://github.com/leafo/lessphp.git
