@@ -22,3 +22,6 @@
 [submodule "modules/markdown"]
 	path = modules/markdown
 	url = git://github.com/aptgraph/kohana-markdown.git
+[submodule "modules/cache"]
+	path = modules/cache
+	url = git://github.com/jneslen/kohana-cache.git

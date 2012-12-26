@@ -3,34 +3,39 @@
 // -- Environment setup --------------------------------------------------------
 
 // Load the core Kohana class
-require SYSPATH.'classes/Kohana/Core'.EXT;
+require SYSPATH.'classes/kohana/core'.EXT;
 
-if (is_file(APPPATH.'classes/Kohana'.EXT))
+if (is_file(APPPATH.'classes/kohana'.EXT))
 {
 	// Application extends the core
-	require APPPATH.'classes/Kohana'.EXT;
+	require APPPATH.'classes/kohana'.EXT;
 }
 else
 {
 	// Load empty core extension
-	require SYSPATH.'classes/Kohana'.EXT;
+	require SYSPATH.'classes/kohana'.EXT;
 }
 
 /**
- * Set the default time zone.
+ * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
  *
- * @link http://kohanaframework.org/guide/using.configuration
- * @link http://www.php.net/manual/timezones
+ * Note: If you supply an invalid environment name, a PHP warning will be thrown
+ * saying "Couldn't find constant Kohana::<INVALID_ENV_NAME>"
  */
-date_default_timezone_set('America/Denver');
+if (isset($_SERVER['KOHANA_ENV']))
+{
+	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
+}
+else
+{
+	// Fetch the local.php config file as an array
+	$environment_config = include(APPPATH.'config/environment.php');
 
-/**
- * Set the default locale.
- *
- * @link http://kohanaframework.org/guide/using.configuration
- * @link http://www.php.net/manual/function.setlocale
- */
-setlocale(LC_ALL, 'en_US.utf-8');
+	// Use the 'environment' key to define the environment
+	Kohana::$environment = (isset($environment_config['environment']))
+		? $environment_config['environment']
+		: 'DEV';
+}
 
 /**
  * Enable the Kohana auto-loader.
@@ -59,9 +64,40 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
 // -- Configuration and initialization -----------------------------------------
 
 /**
+ * Set the default time zone.
+ *
+ * @link http://kohanaframework.org/guide/using.configuration
+ * @link http://www.php.net/manual/timezones
+ */
+if(\Helper::language() == 'jp')
+{
+	date_default_timezone_set('Asia/Tokyo');
+
+}
+else
+{
+	date_default_timezone_set('America/Denver');
+}
+
+/**
+ * Set the default locale.
+ *
+ * @link http://kohanaframework.org/guide/using.configuration
+ * @link http://www.php.net/manual/function.setlocale
+ */
+if(\Helper::language() == 'jp')
+{
+	setlocale(LC_ALL, 'ja_JP.utf-8', 'jpn', 'ja', 'ja_JP', 'jpn_jp');
+}
+else
+{
+	setlocale(LC_ALL, 'en_US.utf-8');
+}
+
+/**
  * Set the default language
  */
-I18n::lang('en-us');
+\I18n::lang(\Helper::language());
 
 /**
  * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
@@ -117,14 +153,30 @@ Kohana::modules(array(
 	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+	'analytics' => MODPATH.'analytics',
+	'assets' => MODPATH.'assets',
+	'bonafide' => MODPATH.'bonafide',
+	'cache' => MODPATH.'cache',
+	'email' => MODPATH.'email',
+	'formo' => MODPATH.'formo',
+	'kacela' => MODPATH.'kacela',
+	'komponent' => MODPATH.'komponent',
+	'less' => MODPATH.'less',
+	'markdown' => MODPATH.'markdown',
+	'menu' => MODPATH.'menu',
 	));
+
+\Cookie::$salt = '6mwg)v2@jk$j@jkslkj!$jlavnowu$#anzpqoufy(!fj#$jlao$';
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults(array(
-		'controller' => 'welcome',
-		'action'     => 'index',
-	));
+try
+{
+	require APPPATH.'/config/routes.php';
+}
+catch (Exception $e)
+{
+	print_r($e);
+}
