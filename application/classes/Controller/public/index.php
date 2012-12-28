@@ -4,7 +4,7 @@ class Controller_Public_Index extends Controller_Public {
 
 	public function action_index()
 	{
-		exit('hello');
+
 	}
 
 }
