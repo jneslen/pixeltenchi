@@ -68,6 +68,7 @@ class Controller_Site extends Controller_Template
 			(
 				'jquery.ui',
 				'plugins/jquery.pngfix',
+				'plugins/jquery.form',
 				'bootstrap.min',
 				'site',
 			)
@@ -82,7 +83,8 @@ class Controller_Site extends Controller_Template
 				'jquery.ui',
 				'icons',
 				'forms',
-				'bootstrap/bootstrap'
+				'bootstrap/bootstrap',
+				$this->_theme_name.'/styles'
 			)
 		);
 
@@ -144,12 +146,12 @@ class Controller_Site extends Controller_Template
 
 	protected function _redirect_after_login()
 	{
-		if ($this->_user instanceof \Tenchi\Model\Jedi)
+		if ($this->_user instanceof \Tenchi\Model\Employee)
 		{
-			$this->request->redirect('admin');
+			$this->redirect('admin');
 		}
 
-		$this->request->redirect('login');
+		$this->redirect('login');
 	}
 
 	protected function _get_current()

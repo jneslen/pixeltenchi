@@ -1,8 +1,10 @@
 @img_path: '/assets/img/';
+@theme_path: '/assets/img/griffin/';
 
 @titlebar_bg_color: #464445;
 @pixel_red: #9b040f;
 @breadcrumb_color: #068da0;
+@border_color: @gray;
 
 @icon_size: 24px;
 
@@ -103,6 +105,26 @@
 	font-style: italic !important;
 }
 
+.border(@color: @border_color, @w: 1px) {
+	border: @w solid @color;
+}
+
+.border-bottom {
+	border-bottom: 1px solid @border_color;
+}
+
+.border-top {
+	border-top: 1px solid @border_color;
+}
+
+.border-right {
+	background: transparent url(@{img_path}solid-555.png) repeat-y top right;
+}
+
+.border-left {
+	background: transparent url(@{img_path}solid-555.png) repeat-y top left;
+}
+
 .rounded_corners(@radius: 5px) {
 	border-radius: @radius;
 	-moz-border-radius: @radius;
@@ -118,7 +140,7 @@
 }
 
 .test1 {
-	background-color: #6aed6a;
+	background-color: #6aed64;
 }
 
 .test2 {

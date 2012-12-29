@@ -9,12 +9,13 @@ class Controller_Public extends Controller_Site
 	public function before()
 	{
 		parent::before();
+		$this->_modal = true;
 	}
 
 	public function lead_form($full = false)
 	{
 		$complete = false;
-		$user = new \Tenci\Model\Lead;
+		$user = new \Tenchi\Model\Lead;
 		$lead_form = $user->get_lead_form()
 			->add('submit', 'submit', array('text' => __('Send Inquiry!')));
 

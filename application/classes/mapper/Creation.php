@@ -1,7 +1,7 @@
 <?php
 namespace Tenchi\Mapper;
 
-class Component extends Mapper
+class Creation extends Mapper
 {
 
 }

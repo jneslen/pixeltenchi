@@ -2,6 +2,23 @@ $(document).ready(function() {
 	$(document).pngFix();
 
 	$('a[data-toggle=modal]').click(function(event) {
+
+		if($(this).attr('data-btn-func') == 'close') {
+			$('.modal-footer .btn').removeClass('submit-button');
+			$('.modal-footer .btn').addClass('close');
+			$('.modal-footer .btn').attr('data-dismiss', 'modal');
+		} else {
+			if(!$('.modal-footer .btn').hasClass('submit-button')) {
+				$('.modal-footer .btn').addClass('submit-button');
+			}
+			$('.modal-footer .btn').removeClass('close');
+			$('.modal-footer .btn').removeAttr('data-dismiss');
+		}
+
+		if($(this).attr('data-btn-name')) {
+			$('.modal-footer .btn').html($(this).attr('data-btn-name'));
+		}
+
 		$('#modal-title').html($(this).attr('data-title'));
 		$('#modal-body').load($(this).attr('href'), function() {
 			$('#modal').modal({

@@ -47,7 +47,7 @@ defined('SYSPATH') OR die('No direct access allowed.');
 </div><!-- footer -->
 <?php if($modal): ?>
 	<?=$modal?>
-	<?php endif; ?>
+<?php endif; ?>
 <!--[if lte IE 8]>
 <script type="text/javascript" src="/assets/js/plugins/css3-mediaqueries.js"></script>
 <![endif]-->
