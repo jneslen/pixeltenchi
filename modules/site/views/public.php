@@ -22,7 +22,7 @@ defined('SYSPATH') OR die('No direct access allowed.');
 	<meta name="keywords" content="<?=$keywords?>" />
 	<meta name="author" content="Matrix42" />
 	<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
-	<script type="text/javascript" src="http://use.typekit.com/dqk5yrb.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/dqk5yrb.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<?=Request::$current->scripts()?>
 	<?=Request::$current->styles()?>

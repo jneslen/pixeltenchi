@@ -131,7 +131,7 @@ class Controller_Site extends Controller_Template
 
 			$this->template->foot_analytics = \Analytics::factory('foot');
 
-			$this->template->header->menu = \Menu::factory($role)->set_current($this->_get_current());
+			$this->template->header->menu = \Menu::factory($role)->set_current('/'.strtolower($this->request->controller()));
 
 			$this->template->header->section = $this->_section;
 

@@ -2,23 +2,31 @@ body {
 	background: #191919 url(@{theme_path}pixeltenchi-mainbg.png) no-repeat top center;
 }
 
-.navbar-inner {
-	padding: 0;
-	border: none;
-	border-radius: 0;
-	height: 50px;
-	.nav {
-		li {
-			a {
-				text-transform: uppercase;
-				padding: 7px 15px 3px;
-				h6 {
-					text-transform: lowercase;
-					padding: 0;
-					margin: 0;
-					font-size: 11px;
-					line-height: 11px;
-					font-weight: 100;
+#main-nav {
+	.navbar-inner {
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		height: 50px;
+		.nav {
+			li {
+				margin-left: 3px;
+				a {
+					text-transform: uppercase;
+					padding: 7px 15px 13px;
+					h6 {
+						text-transform: lowercase;
+						padding: 0;
+						margin: 0;
+						font-size: 11px;
+						line-height: 11px;
+						font-weight: 100;
+					}
+				}
+				&.active {
+					a {
+						border-bottom: 1px solid @linkColor;
+					}
 				}
 			}
 		}
@@ -49,4 +57,81 @@ body {
 	height: 70px;
 	width: 70px;
 	background: transparent url(@{theme_path}login-griffin.png) no-repeat center center;
+}
+
+#options {
+	background: #191919 url(@{theme_path}starfade-bg.png) no-repeat 70% bottom;
+	box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5), -2px 2px 3px 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+#filter-navbar {
+	.nav {
+		li {
+			line-height: 0px;
+			a {
+				.rounded_corners();
+			}
+		}
+	}
+}
+
+.tag-pills {
+	li {
+		.left;
+		list-style: none outside none;
+		text-decoration: none;
+		margin: 0 7px 7px 0;
+		a {
+			color: @white;
+			&.tag {
+				.rounded_corners();
+				font-size: 12px;
+				padding: 2px 4px;
+			}
+		}
+	}
+}
+
+.item {
+	margin: 15px 15px 10px;
+	.item-image {
+		.block;
+		.rel;
+		color: @white;
+		box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5), -2px 2px 3px 1px rgba(255, 255, 255, 0.05) inset;
+		.item-hover {
+			.block;
+			.abs;
+			left: 0;
+			top: 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			height: 100%;
+			width: 100%;
+			opacity: 0;
+			transition: opacity 0.35s ease 0s;
+			.item-hover-inner
+			{
+				padding: 0 10px;
+			}
+			.item-tag {
+				.left;
+				.rounded_corners();
+				font-size: 10px;
+				margin: 0 5px 5px 0;
+				padding: 1px 4px;
+			}
+		}
+	}
+	.item-image:hover {
+		text-decoration: none;
+		.item-hover {
+			opacity: 1 !important;
+		}
+	}
+	.item-detail {
+		max-width: 200px;
+		.item-subtitle {
+			font-size: 10px;
+		}
+	}
 }
