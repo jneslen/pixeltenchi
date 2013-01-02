@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: pixeltenchi
-# Generation Time: 2013-01-02 21:54:52 +0000
+# Generation Time: 2013-01-02 23:18:47 +0000
 # ************************************************************
 
 
@@ -95,10 +95,14 @@ VALUES
 	(6,1),
 	(7,1),
 	(15,1),
+	(16,1),
+	(18,1),
+	(19,1),
 	(2,2),
 	(11,2),
 	(12,2),
 	(13,2),
+	(17,2),
 	(1,3),
 	(3,3),
 	(5,3),
@@ -110,17 +114,22 @@ VALUES
 	(6,4),
 	(7,4),
 	(15,4),
+	(18,4),
+	(19,4),
 	(3,5),
 	(5,5),
 	(6,5),
 	(7,5),
 	(15,5),
+	(18,5),
+	(19,5),
 	(3,6),
 	(5,6),
 	(7,6),
 	(15,6),
 	(1,7),
 	(3,7),
+	(18,7),
 	(1,8),
 	(3,9),
 	(5,9),
@@ -132,11 +141,15 @@ VALUES
 	(5,10),
 	(13,10),
 	(15,10),
+	(18,10),
 	(2,11),
 	(3,11),
 	(11,11),
 	(12,11),
 	(13,11),
+	(16,11),
+	(17,11),
+	(18,11),
 	(1,12),
 	(15,12),
 	(5,13),
@@ -153,12 +166,28 @@ VALUES
 	(3,16),
 	(7,16),
 	(15,16),
+	(18,16),
 	(1,17),
 	(2,17),
+	(16,17),
+	(17,17),
+	(18,17),
 	(12,18),
 	(4,19),
 	(13,19),
-	(14,20);
+	(14,20),
+	(1,21),
+	(3,21),
+	(5,21),
+	(6,21),
+	(7,21),
+	(15,21),
+	(19,21),
+	(5,22),
+	(6,22),
+	(7,22),
+	(15,22),
+	(19,22);
 
 /*!40000 ALTER TABLE `creation_tags` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -203,7 +232,11 @@ VALUES
 	(12,'print','360 OTC NASCAR','Team 360 OTC','This was the consistant design of the first number 36 360 OTC NASCAR teams in both the 2007 Nextel Cup and Truck teams. This team was the first Toyota Nextel Cup Team. The design was used for both divisions for the entire 2007 season. The design was rendered for display using Maya 3D.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/team-360otc.jpg\" alt=\"Team 360 OTC\" />\n</div><!-- creation-container -->','team-360otc-tn.jpg',NULL,NULL,'2006-12-01 23:52:10',0),
 	(13,'print','Matrix42 Booth','ServiceNow Booth San Francisco','Matrix42 booth design for the 2012 ServiceNow Convention in San Francisco California. The booth was designed using a combination of Photoshop and Illustrator using a large format for Print of the 8+ feet panels.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/servicenow-booth.jpg\" alt=\"ServiceNow Booth\" />\n	<hr />\n	<img src=\"/assets/img/uploads/creations/servicenow-booth2.jpg\" alt=\"ServiceNow Booth Photo\" />\n</div><!-- creation-container -->','servicenow-booth-tn.jpg',NULL,NULL,'2012-04-25 00:15:05',0),
 	(14,'art','Michael Jackson','Pencil Sketch','Michael Jackson Bad cover Pencil on artboard. My High School Senior art project. Approximately 90 hours.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/michael-jackson.jpg\" alt=\"Michael Jackson\" />\n</div><!-- creation-container -->','michael-jackson-tn.jpg',NULL,NULL,'1993-04-02 00:28:53',0),
-	(15,'web','Lendio','Backend B2B Matching','As a web developer for lendio.com I had primary responsibility to develop Lendio\'s backend website on the development team, including UI development and aplication development using SCRUM rapid development. I maintained, updated and debugged the online system software, including financial, client gateway, and product areas using the Kohana framework in a WAMP/LAMP/MAMP environment. The development of Lendio\'s propriatory matching software was a constant job and new developments were always rapidely developed in 2 week sprints.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/lendio-homepage.jpg\" alt=\"Lendio\" />\n</div><!-- creation-container -->','lendio-tn.jpg','http://www.lendio.com',NULL,'2012-01-02 00:49:00',0);
+	(15,'web','Lendio','Backend B2B Matching','As a web developer for lendio.com I had primary responsibility to develop Lendio\'s backend website on the development team, including UI development and aplication development using SCRUM rapid development. I maintained, updated and debugged the online system software, including financial, client gateway, and product areas using the Kohana framework in a WAMP/LAMP/MAMP environment. The development of Lendio\'s propriatory matching software was a constant job and new developments were always rapidely developed in 2 week sprints.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/lendio-homepage.jpg\" alt=\"Lendio\" />\n</div><!-- creation-container -->','lendio-tn.jpg','http://www.lendio.com',NULL,'2012-01-02 00:49:00',0),
+	(16,'web','AmericanZen','International Penpals','AmericanZen.net was an international penpals page that was used to connect people all over the world. The site was an addon and improvement of the popular site ispint.com which was a social network penpal site long before social networks were popular. The logo design feel was as far as the project got for isp which abandoned the social idea in 2001. The AmericanZen brand project followed after some development time, but the company loved the feel of the branding. ','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/american-zen.jpg\" alt=\"AmericanZen\" />\n</div><!-- creation-container -->','american-zen-tn.jpg',NULL,NULL,'2001-02-09 15:00:08',0),
+	(17,'logo','AskWilla','Brand and Logo','AskWilla is a parenting help site that is a blog spot for sociologists to connect with troubled teens and their parents. I was commisioned to design their logo to help them start on their way to having an online presence.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/askwilla-logo.jpg\" alt=\"AskWilla\" />\n</div><!-- creation-container -->','askwilla-logo-tn.jpg',NULL,NULL,'2008-12-19 15:21:37',0),
+	(18,'web','B2B Credit Experts','B2B microsite brand','B2B Credit Experts was a microsite that was a feeder site for FundingUniverse (now Lendio). The site was a landing page for funnelling leads through an API push for businesses looking to get funding. I was able to brand and present the site with several branding rules and color schemes.','<div class=\"creation-container\">\n	<h3>Logo:</h3>\n	<img src=\"/assets/img/uploads/creations/b2bcreditexperts-logo.jpg\" alt=\"B2BCreditExperts\" />\n	<hr />\n	<h3>Homepage:</h3>\n	<img src=\"/assets/img/uploads/creations/b2bcreditexperts-home.jpg\" alt=\"B2BCreditExperts homepage\" />\n	<hr />\n	<h3>Subpage</h3>\n	<img src=\"/assets/img/uploads/creations/b2bcreditexperts-sub.jpg\" alt=\"B2BCreditExperts subpage\" />\n</div><!-- creation-container -->','b2bcreditexperts-tn.jpg',NULL,NULL,'2009-03-26 15:32:26',0),
+	(19,'web','Burg Pediatric Dentistry','CSS and UI layout','Burg Pediatric Dentisty was a site that I was commissioned to output in css by Oozle design. I was given the template and was able to output the site into html/css with some minor tweaks to the UI.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/burg-dentist-home.jpg\" alt=\"Burg Pediatric Dentistry\" />\n</div><!-- creation-container -->','burg-dentist-tn.jpg','http://www.burgpediatricdentistry.com/',NULL,'2010-11-11 15:49:48',0);
 
 /*!40000 ALTER TABLE `creations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -316,7 +349,9 @@ VALUES
 	(17,'logo','Logo Design','62182a',NULL,NULL,0),
 	(18,'3d','3D Design','7A000C',NULL,NULL,0),
 	(19,'typography','Typography','7C373F',NULL,NULL,0),
-	(20,'scretch','Pencil Scetch','999999',NULL,NULL,0);
+	(20,'scretch','Pencil Scetch','999999',NULL,NULL,0),
+	(21,'ui','User Interface','ffc907',NULL,NULL,0),
+	(22,'jquery','JQuery','00194c',NULL,NULL,0);
 
 /*!40000 ALTER TABLE `tags` ENABLE KEYS */;
 UNLOCK TABLES;

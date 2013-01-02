@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).load(function() {
 	var $container = $('#portfolio-container');
 	// initialize isotope
 	$container.isotope({
