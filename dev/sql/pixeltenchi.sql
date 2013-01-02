@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: pixeltenchi
-# Generation Time: 2013-01-02 16:50:18 +0000
+# Generation Time: 2013-01-02 17:13:49 +0000
 # ************************************************************
 
 
@@ -231,6 +231,51 @@ CREATE TABLE `leads` (
 
 
 
+# Dump of table notes
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `notes`;
+
+CREATE TABLE `notes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `author_id` int(10) unsigned NOT NULL,
+  `parent_id` int(10) unsigned DEFAULT NULL COMMENT 'Parent note_id',
+  `type` enum('general','sales','response','inquiry','request') NOT NULL DEFAULT 'general',
+  `note` text NOT NULL,
+  `note_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk-user-notes` (`user_id`),
+  KEY `fk-author-notes` (`author_id`),
+  KEY `fk-parent-notes` (`parent_id`),
+  CONSTRAINT `fk-author-notes` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-parent-notes` FOREIGN KEY (`parent_id`) REFERENCES `notes` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-user-notes` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table phones
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `phones`;
+
+CREATE TABLE `phones` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` enum('primary','alternate','mobile') DEFAULT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `address_id` int(10) unsigned DEFAULT NULL,
+  `number` varchar(20) NOT NULL DEFAULT '',
+  `format` enum('north_america','europe','world','england','spain') NOT NULL DEFAULT 'north_america',
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk-user-phones` (`user_id`),
+  CONSTRAINT `fk-user-phones` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 # Dump of table tags
 # ------------------------------------------------------------
 
@@ -316,6 +361,44 @@ VALUES
 UNLOCK TABLES;
 
 
+
+--
+-- Dumping routines (PROCEDURE) for database 'pixeltenchi'
+--
+DELIMITER ;;
+
+# Dump of PROCEDURE sp_belongs_to
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+		FROM INFORMATION_SCHEMA.key_column_usage
+		WHERE TABLE_SCHEMA = schemaName
+		AND TABLE_NAME = tableName
+		AND REFERENCED_TABLE_NAME IS NOT NULL
+		GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+# Dump of PROCEDURE sp_has_many
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+	  FROM INFORMATION_SCHEMA.key_column_usage
+	  WHERE TABLE_SCHEMA = schemaName
+	  AND REFERENCED_TABLE_NAME = tableName
+	  GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
