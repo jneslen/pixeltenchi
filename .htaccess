@@ -1,6 +1,9 @@
 # Turn on URL rewriting
 RewriteEngine On
 
+RewriteCond %{HTTP_HOST} ^pixeltenchi.com$ [NC]
+RewriteRule ^(.*)$ http://www.pixeltenchi.com/$1 [R=301,L]
+
 # Installation directory
 RewriteBase /
 
