@@ -17,7 +17,7 @@
 <div class="row-fluid">
 	<div class="span12">
 		<h3>Prepare to be amazed!</h3>
-		<p>That is why I am here, I am here to amaze! Back in 1999 I began my journey down the road to becoming a web geek and never looked back. I am an ambitions person who loves to create and my world is digital. Pixel Tenchi(Japanese for Heaven) is my place to display the accomplishments and experiments that I have done throughout the years. If there is anything that I love more than life it self it is to create and thus the purpose of my own pixel heaven.</p>
+		<p>That is why I am here, I am here to amaze! Back in 1999 I began my journey down the road to becoming a web geek and never looked back. I am an ambitious person who loves to create and my world is digital. Pixel Tenchi(Japanese for Heaven) is my place to display the accomplishments and experiments that I have done throughout the years. If there is anything that I love more than life itself it is to create and thus the purpose of my own pixel heaven.</p>
 		<h3 class="emphasis">Skills:</h3>
 		<div class="row-fluid">
 			<div class="span3">
