@@ -183,6 +183,6 @@ class Controller_Site extends Controller_Template
 
 		$this->_user = $user_id
 			? \Kacela::find('user', $user_id)
-			: new \Tenchi\Model\User();
+			: new \Tenchi\Model\User;
 	}
 }

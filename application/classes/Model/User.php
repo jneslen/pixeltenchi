@@ -100,7 +100,7 @@ class User extends Model {
 			return $this->_addresses[$type];
 		}
 
-		$this->_addresses[$type] = new \Darth\Model\Address;
+		$this->_addresses[$type] = new \Tenchi\Model\Address;
 
 		$this->_addresses[$type] ->user_id = $this->id;
 		$this->_addresses[$type] ->type = $type;
@@ -216,7 +216,7 @@ class User extends Model {
 			return $this->_notes[$type];
 		}
 
-		$this->_notes[$type] = new \Darth\Model\Note;
+		$this->_notes[$type] = new \Tenchi\Model\Note;
 
 		$this->_notes[$type] ->user_id = $this->id;
 		$this->_notes[$type] ->type = $type;
@@ -239,7 +239,7 @@ class User extends Model {
 			return $this->_phones[$type];
 		}
 
-		$this->_phones[$type] = new \Darth\Model\Phone;
+		$this->_phones[$type] = new \Tenchi\Model\Phone;
 
 		$this->_phones[$type] ->user_id = $this->id;
 		$this->_phones[$type] ->type = $type;
