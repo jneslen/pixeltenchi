@@ -17,7 +17,7 @@
 			</a>
 			<a id="logo" class="brand" href="/"><img src="/assets/img/griffin/pixeltenchi-logo.png" alt="PixelTenchi" /></a>
 			<a id="twitter-name" href="http://twitter.com/jneslen" target="_blank">@jneslen</a>
-			<div class="nav-collapse">
+			<div class="nav-collapse collapse">
 				<?=$menu?>
 			</div>
 			<a id="login-griffin" href="/auth/login"></a>

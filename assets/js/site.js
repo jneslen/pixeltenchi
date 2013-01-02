@@ -20,6 +20,7 @@ $(document).ready(function() {
 		}
 
 		$('#modal-title').html($(this).attr('data-title'));
+		$('#modal-subtitle').html($(this).attr('data-subtitle'));
 		$('#modal-body').load($(this).attr('href'), function() {
 			$('#modal').modal({
 				backdrop: true,

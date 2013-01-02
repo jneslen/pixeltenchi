@@ -25,6 +25,7 @@ class Controller_Site extends Controller_Template
 	protected $_modal;
 	protected $_modal_type = 'form';
 	protected $_modal_title = null;
+	protected $_modal_subtitle = null;
 	protected $_modal_content = null;
 	protected $_modal_view;
 	protected $_modal_button_name = 'Close';
@@ -84,6 +85,7 @@ class Controller_Site extends Controller_Template
 				'icons',
 				'forms',
 				'bootstrap/bootstrap',
+				'bootstrap/responsive',
 				$this->_theme_name.'/styles'
 			)
 		);
@@ -106,6 +108,7 @@ class Controller_Site extends Controller_Template
 		{
 			$this->_modal_view = \View::factory('modal')
 				->set('title', $this->_modal_title)
+				->set('subtitle', $this->_modal_subtitle)
 				->set('content', $this->_modal_content)
 				->set('type', $this->_modal_type)
 				->set('button_name', $this->_modal_button_name);

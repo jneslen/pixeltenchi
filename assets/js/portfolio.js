@@ -3,7 +3,7 @@ $(document).ready(function() {
 	// initialize isotope
 	$container.isotope({
 		itemSelector : '.item',
-		layoutMode : 'fitRows'
+		layoutMode : 'masonry'
 	});
 
 	// filter items when filter link is clicked
