@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: pixeltenchi
-# Generation Time: 2013-01-02 17:13:49 +0000
+# Generation Time: 2013-01-02 21:54:52 +0000
 # ************************************************************
 
 
@@ -202,7 +202,7 @@ VALUES
 	(11,'print','AeroExhaust NASCAR','Team Morgan-Mclure #4','First Generation design of the AeroExhaust NASCAR 2006 Nextel Cup Morgan-McClure racing team #4 car. This design was designed in vector using Illustrator and printed as a wrap for the car. This car was driven by Scott Wimmer during the 2006 Nextel Cup season.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/aero-nascar-martinsville.jpg\" alt=\"Morgan McClure number 4\" />\n	<hr />\n	<img src=\"/assets/img/uploads/creations/aero-nascar-template.jpg\" alt=\"AeroExhaust 4 Nascar\" />\n</div><!-- creation-container -->','aero-nascar-templ-tn.jpg',NULL,NULL,'2006-01-10 23:41:21',0),
 	(12,'print','360 OTC NASCAR','Team 360 OTC','This was the consistant design of the first number 36 360 OTC NASCAR teams in both the 2007 Nextel Cup and Truck teams. This team was the first Toyota Nextel Cup Team. The design was used for both divisions for the entire 2007 season. The design was rendered for display using Maya 3D.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/team-360otc.jpg\" alt=\"Team 360 OTC\" />\n</div><!-- creation-container -->','team-360otc-tn.jpg',NULL,NULL,'2006-12-01 23:52:10',0),
 	(13,'print','Matrix42 Booth','ServiceNow Booth San Francisco','Matrix42 booth design for the 2012 ServiceNow Convention in San Francisco California. The booth was designed using a combination of Photoshop and Illustrator using a large format for Print of the 8+ feet panels.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/servicenow-booth.jpg\" alt=\"ServiceNow Booth\" />\n	<hr />\n	<img src=\"/assets/img/uploads/creations/servicenow-booth2.jpg\" alt=\"ServiceNow Booth Photo\" />\n</div><!-- creation-container -->','servicenow-booth-tn.jpg',NULL,NULL,'2012-04-25 00:15:05',0),
-	(14,'art','Michael Jackson','Pencil Scetch','Michael Jackson Bad cover Pencil on artboard. My High School Senior art project. Approximately 90 hours.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/michael-jackson.jpg\" alt=\"Michael Jackson\" />\n</div><!-- creation-container -->','michael-jackson-tn.jpg',NULL,NULL,'1993-04-02 00:28:53',0),
+	(14,'art','Michael Jackson','Pencil Sketch','Michael Jackson Bad cover Pencil on artboard. My High School Senior art project. Approximately 90 hours.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/michael-jackson.jpg\" alt=\"Michael Jackson\" />\n</div><!-- creation-container -->','michael-jackson-tn.jpg',NULL,NULL,'1993-04-02 00:28:53',0),
 	(15,'web','Lendio','Backend B2B Matching','As a web developer for lendio.com I had primary responsibility to develop Lendio\'s backend website on the development team, including UI development and aplication development using SCRUM rapid development. I maintained, updated and debugged the online system software, including financial, client gateway, and product areas using the Kohana framework in a WAMP/LAMP/MAMP environment. The development of Lendio\'s propriatory matching software was a constant job and new developments were always rapidely developed in 2 week sprints.','<div class=\"creation-container\">\n	<img src=\"/assets/img/uploads/creations/lendio-homepage.jpg\" alt=\"Lendio\" />\n</div><!-- creation-container -->','lendio-tn.jpg','http://www.lendio.com',NULL,'2012-01-02 00:49:00',0);
 
 /*!40000 ALTER TABLE `creations` ENABLE KEYS */;
@@ -361,44 +361,6 @@ VALUES
 UNLOCK TABLES;
 
 
-
---
--- Dumping routines (PROCEDURE) for database 'pixeltenchi'
---
-DELIMITER ;;
-
-# Dump of PROCEDURE sp_belongs_to
-# ------------------------------------------------------------
-
-/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
-/*!50003 SET SESSION SQL_MODE=""*/;;
-/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
-BEGIN
-		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
-		FROM INFORMATION_SCHEMA.key_column_usage
-		WHERE TABLE_SCHEMA = schemaName
-		AND TABLE_NAME = tableName
-		AND REFERENCED_TABLE_NAME IS NOT NULL
-		GROUP BY constraintName;
-	END */;;
-
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
-# Dump of PROCEDURE sp_has_many
-# ------------------------------------------------------------
-
-/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
-/*!50003 SET SESSION SQL_MODE=""*/;;
-/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
-BEGIN
-	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
-	  FROM INFORMATION_SCHEMA.key_column_usage
-	  WHERE TABLE_SCHEMA = schemaName
-	  AND REFERENCED_TABLE_NAME = tableName
-	  GROUP BY constraintName;
-	END */;;
-
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
-DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
