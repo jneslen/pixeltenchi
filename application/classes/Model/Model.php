@@ -8,9 +8,9 @@
 
 namespace Tenchi\Model;
 
-use Kacela\Model as M;
+use Kacela\model as M;
 
-class Model extends M\Model
+class Model extends M\model
 {
 	public function del($flag = true)
 	{

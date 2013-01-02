@@ -8,9 +8,9 @@
 
 namespace Tenchi\Mapper;
 
-use Kacela\Mapper as M;
+use Kacela\mapper as M;
 
-class Mapper extends M\Mapper
+class Mapper extends M\mapper
 {
 	public function find_active(\Gacela\Criteria $criteria = null)
 	{
