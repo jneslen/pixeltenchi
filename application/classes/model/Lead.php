@@ -59,11 +59,11 @@ class Lead extends User
 			->bind('content', $email_content);
 
 		// Send the email
-		$email_address = \Helper::language() === 'en-us' ? 'leads@matrix42.com' : 'leads@matrix42.de';
-		$subject = 'New Matrix42 '.$lead->campaign->name.' Lead';
+		$email_address = 'jneslen@yahoo.com';
+		$subject = 'New PixelTenchi '.$lead->campaign->name.' Inquiry';
 		$email = \Email::factory($subject)
 			->to($email_address)
-			->from('info@matrix42.com')
+			->from('jeff@pixeltenchi.com')
 			->message($message->render(), 'text/html')
 			->send();
 	}
