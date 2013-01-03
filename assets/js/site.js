@@ -38,7 +38,8 @@ $(document).ready(function() {
 						});
 				}
 			});*/
-		$('#modal-body').load($(this).attr('href'), function() {
+		var url = $(this).attr('data-url');
+		$('#modal-body').load(url, function() {
 			$('#modal').modal({
 				backdrop: true,
 				show: true
