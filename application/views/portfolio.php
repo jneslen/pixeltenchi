@@ -9,7 +9,7 @@
 		}
 	?>
 	<div class="item element <?=$classes?>">
-		<a class="item-image" href="portfolio/detail/<?=$creation->id?>" data-btn-func="close" data-toggle="modal" data-title="<?=$creation->title?>" data-subtitle="<?=$creation->subtitle?>">
+		<a class="item-image" href="/portfolio/detail/<?=$creation->id?>" data-btn-func="close" data-toggle="modal" data-title="<?=$creation->title?>" data-subtitle="<?=$creation->subtitle?>">
 			<img src="/assets/img/uploads/creations/thumbs/<?=$creation->thumbnail?>" alt="<?=$creation->title?>" />
 			<div class="item-hover">
 				<div class="item-hover-inner">
