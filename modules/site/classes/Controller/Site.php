@@ -60,6 +60,7 @@ class Controller_Site extends Controller_Template
 
 		if(!$this->request->is_ajax())
 		{
+			header('Access-Control-Allow-Origin: http://www.pixeltenchi.com');
 			$this->request->script('pixeltenchi');
 		}
 
