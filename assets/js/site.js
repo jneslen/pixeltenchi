@@ -21,10 +21,11 @@ $(document).ready(function() {
 
 		$('#modal-title').html($(this).attr('data-title'));
 		$('#modal-subtitle').html($(this).attr('data-subtitle'));
-		/*$.ajax(
+		$.ajax(
 			{
 				url: $(this).attr('href'),
-				cache: false,
+				//cache: false,
+				dataType: 'html',
 				success: function(r) {
 					$('#modal-body').html(r);
 					$('#modal').modal({
@@ -37,8 +38,8 @@ $(document).ready(function() {
 							}
 						});
 				}
-			});*/
-		var url = $(this).attr('href');
+			});
+		/*var url = $(this).attr('href');
 		$('#modal-body').load(url, function() {
 			$('#modal').modal({
 				backdrop: true,
@@ -49,7 +50,7 @@ $(document).ready(function() {
 						return -($(this).width() / 2);
 					}
 				});
-		});
+		});*/
 		event.preventDefault();
 	});
 
