@@ -38,7 +38,7 @@ $(document).ready(function() {
 						});
 				}
 			});*/
-		var url = $(this).attr('data-url');
+		var url = $(this).attr('href');
 		$('#modal-body').load(url, function() {
 			$('#modal').modal({
 				backdrop: true,
