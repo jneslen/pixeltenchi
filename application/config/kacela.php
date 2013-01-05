@@ -21,12 +21,12 @@ return array
 		'db' => array
 		(
 			'type' => 'database',
-			'dbtype' => 'mysql',
 			'schema' => $conf['kacela']['schema'],
 			'host' => $conf['kacela']['host'],
 			'user' => $conf['kacela']['user'],
 			'password' => $conf['kacela']['password']
 		)
 	),
-	'cache' => $conf['kacela']['cache']
+	'cache' => $conf['kacela']['cache'],
+	'profiling' => $conf['kacela']['profiling']
 );
