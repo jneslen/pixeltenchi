@@ -1,6 +1,3 @@
-[submodule "modules/kacela"]
-	path = modules/kacela
-	url = git://github.com/noah-goodrich/kohana-kacela.git
 [submodule "modules/formo"]
 	path = modules/formo
 	url = git://github.com/bmidget/kohana-formo.git
@@ -13,9 +10,6 @@
 [submodule "modules/email"]
 	path = modules/email
 	url = https://github.com/shadowhand/email.git
-[submodule "modules/komponent"]
-	path = modules/komponent
-	url = git://github.com/jneslen/kohana-komponent.git
 [submodule "modules/markdown"]
 	path = modules/markdown
 	url = git://github.com/aptgraph/kohana-markdown.git
@@ -25,3 +19,6 @@
 [submodule "modules/assets/vendor/lessphp"]
 	path = modules/assets/vendor/lessphp
 	url = git://github.com/leafo/lessphp.git
+[submodule "modules/komponent"]
+	path = modules/komponent
+	url = https://github.com/jneslen/kohana-komponent.git
